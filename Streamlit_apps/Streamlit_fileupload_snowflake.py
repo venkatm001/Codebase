@@ -53,9 +53,9 @@ def main():
             st.dataframe(df)
             #df.dtypes
             valid = validate_data(df)
-        if valid:
-            st.write('load data')
-        else: st.warning('Correct errors and re upload')
+            if valid:
+                st.write('load data')
+            else: st.warning('Correct errors and re upload')
 
 if __name__ == '__main__':
     main()
