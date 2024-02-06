@@ -1,7 +1,13 @@
 import streamlit as st
 import pandas as pd
 import json
+from snowflake.snowpark import session 
 
+def write_to_table(df):
+    with open('creds.json') as f:
+        connection_parameters = json.load(f)
+    session = session.builder.congfigs(connection_parameters).create()
+    
 def validate_data(df):
     valid = True
     allowed_state_codes = ['NY','NJ','RI','MA','PA','VT']
@@ -55,6 +61,7 @@ def main():
             valid = validate_data(df)
         if valid:
             st.write('load data')
+            write_to_table(df)
         else: st.warning('Correct errors and re upload')
 
 if __name__ == '__main__':

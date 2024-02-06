@@ -1,0 +1,9 @@
+{
+    "account": "iab50696.us-east-1",
+    "user": "venkat",
+    "role": "sysadmin",
+    "password": "Venky@123987",
+    "warehouse": "APP_WH",
+    "database": "TIMCARE",
+    "schema": "RAW"
+  }
